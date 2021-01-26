@@ -1,9 +1,9 @@
 .new-tweet {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
   width: 100%;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }
 
 
@@ -25,4 +25,6 @@ button {
   border-left-style: hidden;
   border-bottom: solid;
   background-color: transparent;
+  resize: none;
+
 }
