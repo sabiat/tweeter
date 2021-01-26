@@ -1,9 +1,15 @@
 article.tweet header {
   background-color: transparent;
-  width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: space-between;
+  justify-content: space-between;
+}
+
+article.tweet header p {
+  margin: 0;
+}
+
+article.tweet footer p {
+  margin: 0;
 }
 
 article.tweet footer {
@@ -11,6 +17,8 @@ article.tweet footer {
   flex-direction: row;
   justify-content: space-between;
   font-size: 10px;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
 }
 
 article.tweet {
@@ -18,12 +26,11 @@ article.tweet {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 50%;
   margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 16px;
-  padding: 0.5em
+  padding: 1em;
   
 }
 
@@ -33,5 +40,24 @@ article.tweet {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
 
+.tweet-feed {
+  width: 100%;
+  padding-bottom: 1.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom: solid;
+  background-color: transparent;
+  resize: none;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.icons {
+  color: #4056A1;
 }
