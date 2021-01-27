@@ -33,6 +33,7 @@ $(document).ready(function() {
   ]
 
   const createTweetElement = function(tweetObj) {
+    const timeSince = moment(tweetObj["created_at"]).fromNow();
     let $tweet = `
     <article class="tweet">
     <header>
@@ -44,7 +45,7 @@ $(document).ready(function() {
     </header>
     <div class="tweet-feed">${tweetObj.content.text}</div>
     <footer>
-      <p>${tweetObj["created_at"]}</p>
+      <p>${timeSince}</p>
       <div class="icons">
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
@@ -59,14 +60,11 @@ $(document).ready(function() {
 
   const renderTweets = function(tweetsArr) {
     for (let tweet of tweetsArr) {
-      const newTweet = createTweetElement(tweet);
-      console.log(newTweet)
-      $('#all-tweets').append(newTweet);
+      const $newTweet = createTweetElement(tweet);
+      $('#all-tweets').append($newTweet);
     }
   };
-
   renderTweets(data);
-
 
 });
 
