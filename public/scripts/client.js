@@ -5,6 +5,11 @@
  */
 
 const createTweetElement = function(tweetObj) {
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
   const timeSince = moment(tweetObj.created_at).fromNow();
   let $tweet = `
   <article class="tweet">
@@ -15,7 +20,7 @@ const createTweetElement = function(tweetObj) {
     </div>
     <p class="hidden-username">${tweetObj.user.handle}</p>
   </header>
-  <div class="tweet-feed">${tweetObj.content.text}</div>
+  <div class="tweet-feed">${escape(tweetObj.content.text)}</div>
   <footer>
     <p>${timeSince}</p>
     <div class="icons">
