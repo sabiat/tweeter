@@ -79,3 +79,18 @@ article.tweet:hover footer {
 article.tweet:hover header {
   font-weight: bold;
 }
+
+img {
+  height: 30px;
+  width: 30px;
+}
+
+.left-side {
+  display: flex;
+  justify-content: row;
+  align-items: center;
+}
+
+.left-side span {
+  padding-left: 10px;
+}
