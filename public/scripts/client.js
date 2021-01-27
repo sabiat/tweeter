@@ -40,16 +40,25 @@ $(document).ready(function() {
 
   $('form').on('submit', function(event) {
     event.preventDefault();
-    const tweet = $(this).serialize();
+    const tweet = $(this).children('#tweet-text');
+    console.log(tweet.val())
 
-    $.ajax({
+    if (!tweet.val()) {
+      alert('Tweet cannot be empty');
+    } else if (tweet.val().length > 140) {
+      alert('Tweet is over 140 character limit');
+    } else {
+      $.ajax({
       url: "/tweets/",
       method: 'POST',
-      data: tweet
-    })
-      .done(function(data) {
-        console.log('Success:', data);
+      data: tweet.serialize()
       })
+        .done(function(data) {
+          console.log('Success:', data);
+        })
+      tweet.val('');
+    }
+    
   });
 
   //makes Ajax GET request and receive array of tweets then call renderTweets to load tweets on success
