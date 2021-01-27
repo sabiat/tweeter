@@ -30,5 +30,6 @@ button {
   border-bottom: solid;
   background-color: transparent;
   resize: none;
+  outline: none;
 
 }

@@ -41,7 +41,6 @@ $(document).ready(function() {
   $('form').on('submit', function(event) {
     event.preventDefault();
     const tweet = $(this).children('#tweet-text');
-    console.log(tweet.val())
 
     if (!tweet.val()) {
       alert('Tweet cannot be empty');
@@ -53,10 +52,16 @@ $(document).ready(function() {
       method: 'POST',
       data: tweet.serialize()
       })
-        .done(function(data) {
-          console.log('Success:', data);
+        .done(function() {
+          $.ajax("/tweets/",{method: 'GET'})
+            .done(function(data) {
+              let recentTweetObj = data[data.length-1];
+              let $recentTweet = createTweetElement(recentTweetObj);
+              $('#all-tweets').prepend($recentTweet);
+              tweet.val('');
+              $('.counter').val(140);
+            })
         })
-      tweet.val('');
     }
     
   });
