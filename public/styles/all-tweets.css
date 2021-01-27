@@ -1,14 +1,9 @@
 article.tweet header {
-  background-color: transparent;
   display: flex;
   justify-content: space-between;
 }
 
-article.tweet header p {
-  margin: 0;
-}
-
-article.tweet footer p {
+article.tweet p {
   margin: 0;
 }
 
@@ -16,7 +11,7 @@ article.tweet footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: 12px;
   padding-left: 0.75em;
   padding-right: 0.75em;
 }
@@ -32,6 +27,13 @@ article.tweet {
   font-size: 16px;
   padding: 1em;
   
+}
+.hidden-username {
+  display: none;
+}
+
+article.tweet:hover {
+  box-shadow: 8px 8px lightgrey;
 }
 
 #all-tweets {
@@ -60,4 +62,20 @@ article.tweet {
 
 .icons {
   color: #4056A1;
+}
+
+article.tweet:hover .hidden-username {
+  display: block;
+  color: lightgray;
+}
+
+article.tweet:hover .tweet-feed {
+  font-weight: bold;
+}
+article.tweet:hover footer {
+  font-weight: bold;
+}
+
+article.tweet:hover header {
+  font-weight: bold;
 }
