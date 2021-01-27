@@ -80,7 +80,7 @@ article.tweet:hover header {
   font-weight: bold;
 }
 
-img {
+.left-side img {
   height: 30px;
   width: 30px;
 }
