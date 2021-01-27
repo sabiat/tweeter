@@ -1,5 +1,6 @@
 .main-header {
   height: 400px;
+  padding-top: 40px;
   width: auto;
   display: flex;
   flex-direction: column;
@@ -9,3 +10,4 @@
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 
 }
+
