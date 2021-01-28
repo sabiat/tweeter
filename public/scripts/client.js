@@ -90,14 +90,14 @@ $(document).ready(function() {
 
   // slides new tweet section up/down on button click
 
-  $('.compose').on('click', function(event) {
+  $('.compose').on('click', function() {
     if ($('.new-tweet').is(":hidden")) {
       $('.new-tweet').slideDown();
+      $('#tweet-text').focus();
     } else {
       $('.new-tweet').slideUp();
-    }
-    
-  })
+    }  
+  });
 
 });
 
