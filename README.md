@@ -4,6 +4,10 @@ Tweeter is a simple, single-page Twitter clone.
 
 This project was implemented using cloned starter code and was used to practice HTML, CSS, JS, jQuery, and AJAX front-end skills along with Node, Express and MongoDB back-end skills.
 
+### Features
+
+- Compose tweet by clicking button in nav bar or scroll up button at the bottom of the page
+
 ## Final Product
 
 !["Screenshot of tablet display"](https://github.com/sabiat/tweeter/blob/master/docs/tablet-display.png?raw=true)
