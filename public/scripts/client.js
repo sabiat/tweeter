@@ -63,7 +63,7 @@ $(document).ready(function() {
         .done(function() {
           $.ajax("/tweets/",{method: 'GET'})
             .done(function(data) {
-              let recentTweetObj = data[data.length-1];
+              let recentTweetObj = data[data.length - 1];
               let $recentTweet = createTweetElement(recentTweetObj);
               $('#all-tweets').prepend($recentTweet);
               tweet.val('');
