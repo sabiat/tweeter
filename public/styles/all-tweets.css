@@ -30,6 +30,8 @@ article.tweet {
 }
 .hidden-username {
   display: none;
+  color: lightgray;
+  font-weight: bolder;
 }
 
 article.tweet:hover {
@@ -69,11 +71,6 @@ article.tweet:hover .icons {
   display: block;
 }
 
-article.tweet:hover .hidden-username {
-  display: block;
-  color: lightgray;
-}
-
 article.tweet:hover .tweet-feed {
   font-weight: bold;
 }
@@ -83,6 +80,10 @@ article.tweet:hover footer {
 
 article.tweet:hover header {
   font-weight: bold;
+}
+
+article.tweet:hover .hidden-username {
+  display: block;
 }
 
 .left-side img {

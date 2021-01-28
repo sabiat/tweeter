@@ -11,7 +11,7 @@ const createTweetElement = function(tweetObj) {
     return div.innerHTML;
   }
   const timeSince = moment(tweetObj.created_at).fromNow();
-  let $tweet = `
+  const $tweet = `
   <article class="tweet">
   <header>
     <div class="left-side">
@@ -41,7 +41,20 @@ const renderTweets = function(tweetsArr) {
   }
 };
 
+
 $(document).ready(function() {
+
+  const loadTweets = function() {
+    $.ajax("/tweets/", {method: 'GET'})
+      .done(function(data) {
+        renderTweets(data);
+      })
+      .fail(function () {
+        alert('error');
+      })
+  };
+  
+    loadTweets();
 
   $('form').on('submit', function(event) {
     event.preventDefault();
@@ -74,21 +87,8 @@ $(document).ready(function() {
     
   });
 
-  // makes Ajax GET request and receive array of tweets then call renderTweets to load tweets on success
-  const loadTweets = function() {
-    $.ajax("/tweets/", {method: 'GET'})
-      .done(function(data) {
-        renderTweets(data);
-      })
-      .fail(function () {
-        alert('error');
-      })
-  };
 
-  loadTweets();
-
-
-  // slides new tweet section up/down on button click
+  // Slides compose tweet form up/down
 
   $('.compose').on('click', function() {
     if ($('.new-tweet').is(":hidden")) {
