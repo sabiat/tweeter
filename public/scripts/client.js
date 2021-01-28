@@ -9,7 +9,7 @@ const createTweetElement = function(tweetObj) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
   const timeSince = moment(tweetObj.created_at).fromNow();
   const $tweet = `
   <article class="tweet">
@@ -49,44 +49,43 @@ $(document).ready(function() {
       .done(function(data) {
         renderTweets(data);
       })
-      .fail(function () {
+      .fail(function() {
         alert('error');
-      })
+      });
   };
   
-    loadTweets();
+  loadTweets();
 
   $('form').on('submit', function(event) {
     event.preventDefault();
     const tweet = $(this).children('#tweet-text');
     $('.error').slideUp("fast");
     if (!tweet.val()) {
-      $('#error-text').text('*Tweet cannot be empty*')
-      $('.error').slideDown("slow")
+      $('#error-text').text('*Tweet cannot be empty*');
+      $('.error').slideDown("slow");
     } else if (tweet.val().length > 140) {
-      $('#error-text').text('*Tweet is over 140 character limit*')
-      $('.error').slideDown("slow")
+      $('#error-text').text('*Tweet is over 140 character limit*');
+      $('.error').slideDown("slow");
     } else {
       $('.error').slideUp("fast");
       $.ajax({
-      url: "/tweets/",
-      method: 'POST',
-      data: tweet.serialize()
+        url: "/tweets/",
+        method: 'POST',
+        data: tweet.serialize()
       })
         .done(function() {
           $.ajax("/tweets/",{method: 'GET'})
             .done(function(data) {
-              let recentTweetObj = data[data.length - 1];
-              let $recentTweet = createTweetElement(recentTweetObj);
+              const recentTweetObj = data[data.length - 1];
+              const $recentTweet = createTweetElement(recentTweetObj);
               $('#all-tweets').prepend($recentTweet);
               tweet.val('');
               $('.counter').val(140);
-            })
-        })
+            });
+        });
     }
     
   });
-
 
   // Slides compose tweet form up/down
 
@@ -96,7 +95,7 @@ $(document).ready(function() {
       $('#tweet-text').focus();
     } else {
       $('.new-tweet').slideUp();
-    }  
+    }
   });
 
 });
