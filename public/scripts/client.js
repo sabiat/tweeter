@@ -99,7 +99,6 @@ $(document).ready(function() {
   });
 
   // show scroll button
-
   $(window).scroll(function(){
     if ($(this).scrollTop() > 100) {
         $('#scroll-up').fadeIn();
@@ -110,6 +109,7 @@ $(document).ready(function() {
     }
   });
 
+  // scroll and focus on text area
   $('#scroll-up').click(function() {
     $("html, body").animate({scrollTop: 0}, 1000);
     $('.new-tweet').slideDown();
