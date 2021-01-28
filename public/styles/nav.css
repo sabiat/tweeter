@@ -21,3 +21,20 @@ nav span {
 body {
   margin-top: 120px;
 }
+nav div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav p {
+  margin: 0;
+}
+nav i {
+  color: red;
+}
+
+nav button {
+  border: none;
+}
