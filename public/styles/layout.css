@@ -38,3 +38,11 @@ main {
   margin: auto;
 
 }
+
+/* Desktop Styles */
+@media only screen and (min-width: 1024px) {
+  main {
+    margin-left: 4em;
+    margin-right: 2em
+  }
+}
