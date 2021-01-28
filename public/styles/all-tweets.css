@@ -61,7 +61,12 @@ article.tweet:hover {
 }
 
 .icons {
+  display: none;
   color: #4056A1;
+}
+
+article.tweet:hover .icons {
+  display: block;
 }
 
 article.tweet:hover .hidden-username {
