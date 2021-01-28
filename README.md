@@ -7,7 +7,7 @@ This project was implemented using cloned starter code and was used to practice 
 ## Final Product
 
 !["Screenshot of tablet display"](https://github.com/sabiat/tweeter/blob/master/docs/tablet-display.png?raw=true)
-!["Screenshot of desktop with scroll up button"]()
+!["Screenshot of desktop with scroll up button"](https://github.com/sabiat/tweeter/blob/master/docs/desktop-scroll.png?raw=true)
 !["Screenshot of error and on hover display"](https://github.com/sabiat/tweeter/blob/master/docs/onhover-error-display.png?raw=true)
 !["Screenshot of compose box when hidden](https://github.com/sabiat/tweeter/blob/master/docs/form-slideup.png?raw=true)
 
