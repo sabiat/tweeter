@@ -49,7 +49,8 @@ nav i {
 }
 
 .compose:hover {
-    top: 10px;
+  cursor: pointer;
+  top: 10px;
 }
 
 /* Tablet Styles */
