@@ -44,14 +44,17 @@ const renderTweets = function(tweetsArr) {
 $(document).ready(function() {
 
   $('form').on('submit', function(event) {
+    $('.error').slideUp("fast");
     event.preventDefault();
     const tweet = $(this).children('#tweet-text');
-
     if (!tweet.val()) {
-      alert('Tweet cannot be empty');
+      $('#error-text').text('Tweet cannot be empty')
+      $('.error').slideDown("slow")
     } else if (tweet.val().length > 140) {
-      alert('Tweet is over 140 character limit');
+      $('#error-text').text('Tweet is over 140 character limit')
+      $('.error').slideDown("slow")
     } else {
+      $('.error').slideUp("fast");
       $.ajax({
       url: "/tweets/",
       method: 'POST',
