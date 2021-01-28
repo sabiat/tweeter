@@ -22,7 +22,7 @@ nav span {
 body {
   margin-top: 120px;
 }
-nav div {
+.nav-links {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,6 +37,15 @@ nav i {
   color: red;
 }
 
-nav button {
+.compose {
   border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+}
+
+.compose:hover {
+    top: 10px;
 }

@@ -74,7 +74,7 @@ $(document).ready(function() {
     
   });
 
-  //makes Ajax GET request and receive array of tweets then call renderTweets to load tweets on success
+  // makes Ajax GET request and receive array of tweets then call renderTweets to load tweets on success
   const loadTweets = function() {
     $.ajax("/tweets/", {method: 'GET'})
       .done(function(data) {
@@ -86,6 +86,18 @@ $(document).ready(function() {
   };
 
   loadTweets();
+
+
+  // slides new tweet section up/down on button click
+
+  $('.compose').on('click', function(event) {
+    if ($('.new-tweet').is(":hidden")) {
+      $('.new-tweet').slideDown();
+    } else {
+      $('.new-tweet').slideUp();
+    }
+    
+  })
 
 });
 
